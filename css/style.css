@@ -1,0 +1,317 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffe5ec 100%);
+    margin: 0;
+    color: #2d2d2d;
+}
+/* Хедер та логотип */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 24px 0 0 0;
+    background: none;
+    position: relative;
+}
+
+/* Логотип під хедером, великий, з ефектом "підсвічування" */
+.logo {
+    display: block;
+    margin: 32px auto 0 auto;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    box-shadow: 0 8px 48px #ffb3d9, 0 0 0 12px #fff0f6;
+    object-fit: cover;
+    background: #fff;
+    border: 6px solid #ffb3d9;
+    transition: box-shadow 0.4s;
+    position: relative;
+    z-index: 10;
+}
+
+/* Хедер */
+header {
+    background: linear-gradient(90deg, #fff0f6 0%, #ffe5ec 100%);
+    box-shadow: 0 4px 24px rgba(255, 105, 180, 0.10);
+    border-radius: 0 0 32px 32px;
+    padding: 24px 0 0 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ff5eae;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius: 18px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #ffb3d9;
+    color: #fff;
+    box-shadow: 0 2px 12px #ffb3d9;
+    outline: none;
+}
+
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 0 0 0;
+        gap: 0;
+    }
+    .logo {
+        height: 90px;
+        width: 90px;
+        margin: 18px auto 0 auto;
+    }
+    nav {
+        margin-top: 16px;
+    }
+    nav ul {
+        gap: 14px;
+    }
+    nav a {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        border-radius: 0 0 16px 16px;
+        padding: 6px 0 0 0;
+    }
+    .logo {
+        height: 56px;
+        width: 56px;
+        margin: 10px auto 0 auto;
+        box-shadow: 0 4px 16px #ffb3d9, 0 0 0 6px #fff0f6;
+        border-width: 3px;
+    }
+    nav ul {
+        gap: 8px;
+    }
+    nav a {
+        font-size: 0.9rem;
+        padding: 4px 6px;
+    }
+}
+
+.cocktails {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 40px;
+    box-shadow: 0 12px 48px rgba(255, 105, 180, 0.18), 0 2px 8px rgba(0,0,0,0.07);
+    animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.cocktails h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ff5eae;
+    margin-bottom: 44px;
+    text-shadow: 0 2px 12px #fff0f6;
+}
+
+
+.cocktail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+
+.cocktail-item {
+    background: linear-gradient(120deg, #fff0f6 0%, #f8fafc 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.13), 0 1px 4px rgba(0,0,0,0.04);
+    padding: 40px 24px 48px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cocktail-item:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 16px 48px rgba(255, 105, 180, 0.22), 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.cocktail-item::before {
+    content: "";
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #ffb3d9 0%, transparent 70%);
+    opacity: 0.22;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+.cocktail-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff5eae;
+    margin: 0 0 24px 0;
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    transition: color 0.2s;
+    text-shadow: 0 2px 8px #fff0f6;
+}
+
+.cocktail-item:hover h3 {
+    color: #ff2e7a;
+}
+
+.cocktail-item img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.16);
+    margin-bottom: 28px;
+    background: #fff;
+    border: 6px solid #ffb3d9;
+    transition: transform 0.3s;
+    z-index: 1;
+    position: relative;
+   
+}
+
+@keyframes floatCocktail {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-16px);}
+}
+
+.cocktail-item p {
+    font-size: 1.25rem;
+    color: #444;
+    text-align: center;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    line-height: 1.7;
+    padding: 0 12px;
+}
+
+
+@media (max-width: 900px) {
+    .cocktails {
+        padding: 18px 6px;
+        max-width: 98vw;
+    }
+    .cocktail-list {
+        gap: 32px;
+    }
+    .cocktail-item {
+        padding: 24px 8px 32px 8px;
+    }
+    .cocktail-item img {
+        width: 140px;
+        height: 140px;
+    }
+    .cocktail-item h3 {
+        font-size: 1.3rem;
+    }
+    .cocktail-item p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .cocktails h2 {
+        font-size: 1.2rem;
+    }
+    .cocktail-list {
+        gap: 18px;
+    }
+    .cocktail-item {
+        margin-bottom: 12px;
+        padding: 12px 2px 18px 2px;
+    }
+    .cocktail-item img {
+        width: 90px;
+        height: 90px;
+    }
+    .cocktail-item h3 {
+        font-size: 1rem;
+    }
+    .cocktail-item p {
+        font-size: 0.9rem;
+    }
+}
+
+
+.cocktail-item:hover img {
+    transform: scale(1.10) rotate(-2deg);
+    box-shadow: 0 16px 48px rgba(255, 105, 180, 0.22);
+}
+
+.cocktail-item:hover::before {
+    opacity: 0.35;
+}
+
+
+.gif-section {
+    max-width: 700px;
+    margin: 48px auto 32px auto;
+    background: linear-gradient(120deg, #fff0f6 0%, #f8fafc 100%);
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(255, 105, 180, 0.10);
+    padding: 24px 18px;
+    text-align: center;
+    animation: fadeIn 1.2s;
+}
+
+.gif-section h2 {
+    color: #ff5eae;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.gif-section img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(255, 105, 180, 0.12);
+    border: 3px solid #ffb3d9;
+   
+}
+

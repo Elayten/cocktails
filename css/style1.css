@@ -1,0 +1,39 @@
+header {
+    background: linear-gradient(90deg, #fff0f6 0%, #ffe5ec 100%);
+    box-shadow: 0 4px 24px rgba(255, 105, 180, 0.10);
+    border-radius: 0 0 32px 32px;
+    padding: 24px 0 0 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ff5eae;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius: 18px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #ffb3d9;
+    color: #fff;
+    box-shadow: 0 2px 12px #ffb3d9;
+    outline: none;
+}
